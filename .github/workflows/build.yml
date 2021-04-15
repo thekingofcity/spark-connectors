@@ -36,12 +36,12 @@ jobs:
           # and we will rerun the download to get the newest packages
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
 
-        # build cache is used when we need to publish the artifact
-      - name: Cache build outputs
-        uses: actions/cache@v2
-        with:
-          path: ./*
-          key: ${{ github.run_id }}
+      #   # build cache is used when we need to publish the artifact
+      # - name: Cache build outputs
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: ./*
+      #     key: ${{ github.run_id }}
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
