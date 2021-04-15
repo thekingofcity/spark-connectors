@@ -23,18 +23,18 @@ jobs:
           java-package: jdk  # (jre, jdk, or jdk+fx) - defaults to jdk
           architecture: x64  # (x64 or x86) - defaults to x64
 
-      - name: Cache gradle modules
-        uses: actions/cache@v2
-        with:
-          # gradle packages that need to be cached
-          path: |
-            .gradle
-            $HOME/.gradle
-            $HOME/.m2
-          # key to identify the specific cache
-          # so if we upgrade some modules, the key(hash) of `gradle.properties` will change
-          # and we will rerun the download to get the newest packages
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+      # - name: Cache gradle modules
+      #   uses: actions/cache@v2
+      #   with:
+      #     # gradle packages that need to be cached
+      #     path: |
+      #       .gradle
+      #       $HOME/.gradle
+      #       $HOME/.m2
+      #     # key to identify the specific cache
+      #     # so if we upgrade some modules, the key(hash) of `gradle.properties` will change
+      #     # and we will rerun the download to get the newest packages
+      #     key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
 
       #   # build cache is used when we need to publish the artifact
       # - name: Cache build outputs
